@@ -1,0 +1,106 @@
+{
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+
+  "profiles": {
+    "defaults": {
+      "padding": "12, 8, 12, 8",
+      "antialiasingMode": "cleartype"
+    },
+    "list": [
+      {
+        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+        "name": "PowerShell 7",
+        "source": "Windows.Terminal.PowershellCore",
+        "hidden": false,
+        "font": {
+          "face": "Cascadia Code PL",
+          "size": 11,
+          "weight": "normal",
+          "features": {
+            "liga": 1,
+            "calt": 1
+          }
+        },
+        "colorScheme": "Cyberpunk Neon",
+        "cursorShape": "filledBox",
+        "cursorColor": "#FF00FF",
+        "opacity": 85,
+        "useAcrylic": true,
+        "backgroundImage": null,
+        "backgroundImageOpacity": 0.15,
+        "tabTitle": "⚡ PowerShell",
+        "startingDirectory": "%USERPROFILE%",
+        "bellStyle": "none",
+        "scrollbarState": "hidden",
+        "unfocusedAppearance": {
+          "opacity": 60
+        }
+      }
+    ]
+  },
+
+  "schemes": [
+    {
+      "name": "Cyberpunk Neon",
+      "background": "#0a0e27",
+      "foreground": "#e0e0e0",
+      "black": "#1a1a2e",
+      "blue": "#00d9ff",
+      "cyan": "#00ffcc",
+      "green": "#39ff14",
+      "purple": "#bd00ff",
+      "red": "#ff2a6d",
+      "white": "#e0e0e0",
+      "yellow": "#fffd00",
+      "brightBlack": "#3d3d5c",
+      "brightBlue": "#33e1ff",
+      "brightCyan": "#5affea",
+      "brightGreen": "#7dff7a",
+      "brightPurple": "#d966ff",
+      "brightRed": "#ff5c8a",
+      "brightWhite": "#ffffff",
+      "brightYellow": "#ffff66",
+      "selectionBackground": "#264f78",
+      "cursorColor": "#ff00ff"
+    },
+    {
+      "name": "Cinnamon Roll",
+      "background": "#1E1E2E",
+      "foreground": "#D9E0EE",
+      "black": "#1E1E2E",
+      "blue": "#96CDFB",
+      "cyan": "#89DCEB",
+      "green": "#ABE9B3",
+      "purple": "#DDB6F2",
+      "red": "#F28FAD",
+      "white": "#D9E0EE",
+      "yellow": "#FAE3B0",
+      "brightBlack": "#575268",
+      "brightBlue": "#96CDFB",
+      "brightCyan": "#89DCEB",
+      "brightGreen": "#ABE9B3",
+      "brightPurple": "#DDB6F2",
+      "brightRed": "#F28FAD",
+      "brightWhite": "#D9E0EE",
+      "brightYellow": "#FAE3B0",
+      "selectionBackground": "#575268"
+    }
+  ],
+
+  "actions": [
+    { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+    { "command": "paste", "keys": "ctrl+v" },
+    { "command": "find", "keys": "ctrl+shift+f" },
+    { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
+    { "command": "toggleFocusMode", "keys": "ctrl+shift+enter" },
+    { "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+plus" },
+    { "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+minus" }
+  ],
+
+  "theme": "dark",
+  "alwaysShowTabs": true,
+  "tabWidthMode": "equal",
+  "showTabsInTitlebar": true,
+  "showTerminalTitleInTitlebar": true
+}
