@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای گام‌به‌گام بیزجی</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        h2 {
+            color: #764ba2;
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1.5rem;
+            padding-right: 1rem;
+            border-right: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        h2:hover {
+            transform: translateX(-5px);
+            border-right-color: #764ba2;
+        }
+
+        h3 {
+            color: #5a67d8;
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h3::before {
+            content: '●';
+            color: #667eea;
+            font-size: 1.5rem;
+        }
+
+        .step-card {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        ol, ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        li {
+            margin: 0.8rem 0;
+            padding-right: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        li:hover {
+            color: #667eea;
+            transform: translateX(-3px);
+        }
+
+        code {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            color: #764ba2;
+            font-size: 0.9rem;
+            border: 1px solid #667eea30;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff4e6 0%, #ffe8cc 100%);
+            border-right: 5px solid #ff9800;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(255, 152, 0, 0.1);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(255, 152, 0, 0.2);
+            }
+        }
+
+        .warning-box h3 {
+            color: #e67700;
+            margin-top: 0;
+        }
+
+        .warning-box h3::before {
+            content: '⚠️';
+            margin-left: 0.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #667eea20 0%, #764ba220 100%);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            animation: progress 2s ease-out;
+        }
+
+        @keyframes progress {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            body {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>راهنمای گام‌به‌گام برای کاربران بیزجی</h1>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+            <span class="badge">بدون نیاز به دانش برنامه‌نویسی</span>
+        </p>
+
+        <div class="step-card">
+            <h2>۱. آماده‌سازی فایل DLL</h2>
+            <ul>
+                <li>از تیم توسعه یا منبع مطمئن، فایل <code>BizagiDocxMapper.dll</code> را دریافت کنید.</li>
+                <li>اطمینان حاصل کنید نسخه DLL با نسخه محیط بیزجی شما <span class="highlight">سازگار</span> است (ترجیحاً همان نسخه‌ای که تست شده است).</li>
+            </ul>
+        </div>
+
+        <div class="step-card">
+            <h2>۲. بارگذاری DLL در محیط بیزجی</h2>
+            <ol>
+                <li>وارد <span class="highlight">Bizagi Studio</span> شوید و پروژه مربوطه را باز کنید.</li>
+                <li>از منوی بالایی مسیر زیر را دنبال کنید:<br>
+                    <code>Expert → External Libraries → Manage Libraries</code>
+                </li>
+                <li>در پنجره بازشده روی <strong>Add</strong> کلیک کرده و فایل <code>BizagiDocxMapper.dll</code> را انتخاب کنید.</li>
+                <li>پس از افزودن، دکمه <strong>Save</strong> را بزنید تا DLL در محیط توسعه ثبت شود.</li>
+                <li>اگر محیط Production یا Test جداگانه دارید، همین مراحل را در آن محیط‌ها نیز تکرار کنید یا از Deployment Package استفاده کنید.</li>
+            </ol>
+        </div>
+
+        <div class="step-card">
+            <h2>۳. تنظیم دسترسی به محل فایل‌های DOCX</h2>
+            <ul>
+                <li>پوشه‌ای روی سرور بیزجی ایجاد کنید (مثلاً <code>C:\BizagiDocs</code>).</li>
+                <li>فایل‌های DOCX ورودی را در این مسیر قرار دهید.</li>
+                <li>مطمئن شوید سرویس بیزجی (Bizagi Engine) <span class="highlight">مجوز خواندن</span> از این مسیر را داشته باشد.</li>
+            </ul>
+        </div>
+
+        <div class="step-card">
+            <h2>۴. ایجاد یا ویرایش Expression برای استفاده از DLL</h2>
+            <ol>
+                <li>در فرآیند موردنظر، یک <strong>Script Task</strong> یا <strong>Expression</strong> ایجاد/ویرایش کنید.</li>
+                <li>نوع زبان را روی <code>C#</code> قرار دهید.</li>
+                <li>در ابتدای Expression، namespace مربوط را اضافه کنید:<br>
+                    <code>using BizagiDocxMapper;</code><br>
+                    <code>using BizagiDocxMapper.Models;</code>
+                </li>
+                <li>از نمونه کد فراخوانی (که قبلاً ارائه شد) استفاده کرده و فقط مسیر فایل و فیلدهای موردنظر را تنظیم کنید.</li>
+                <li>Expression را ذخیره کرده و از عدم وجود خطا اطمینان حاصل کنید.</li>
+            </ol>
+        </div>
+
+        <div class="step-card">
+            <h2>۵. نگاشت خروجی به فیلدهای بیزجی</h2>
+            <ul>
+                <li>در موجودیت (Entity) مقصد، فیلدهایی با نام‌هایی مثل <code>DocumentTitle</code>, <code>Paragraph_1</code> و … ایجاد کنید.</li>
+                <li>در Expression، مقادیر برگشتی از DLL را به این فیلدها نسبت دهید.</li>
+                <li>در صورت داشتن تعداد پاراگراف یا خانه‌های جدول متغیر، می‌توانید در Expression روی <code>mapping.Fields</code> حلقه بزنید و بر اساس نام فیلد، مقدار را در موجودیت ذخیره کنید.</li>
+            </ul>
+        </div>
+
+        <div class="step-card">
+            <h2>۶. تست در محیط توسعه</h2>
+            <ol>
+                <li>یک کیس آزمایشی اجرا کنید.</li>
+                <li>اطمینان حاصل کنید فایل DOCX موردنظر در مسیر تعریف‌شده وجود دارد.</li>
+                <li>بعد از اجرای Task مربوطه، فیلدهای موجودیت را بررسی کنید و مطمئن شوید مقادیر به‌درستی پر شده‌اند.</li>
+                <li>در صورت نیاز، خروجی Expression یا لاگ‌ها را بررسی کنید تا خطاها مشخص شوند.</li>
+            </ol>
+        </div>
+
+        <div class="step-card">
+            <h2>۷. استقرار در محیط اصلی (Production)</h2>
+            <ul>
+                <li>پس از موفقیت در تست، از طریق <strong>Deployment Package</strong> یا تکرار مراحل بارگذاری DLL، تغییرات را به محیط Production منتقل کنید.</li>
+                <li>در اولین اجرای واقعی، با یک فایل نمونه نتیجه را کنترل کنید.</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>نکات مهم</h3>
+            <ul>
+                <li>تغییرات DLL را همیشه در کنترل نسخه نگه دارید و تاریخچه نسخه‌ها را مستند کنید.</li>
+                <li>اگر نام فیلدهای الگو تغییر کرد، حتماً Expression را به‌روزرسانی کنید.</li>
+                <li>برای امنیت بیشتر، دسترسی به پوشه‌ای که فایل‌های DOCX در آن قرار می‌گیرند را محدود کنید.</li>
+                <li>در صورت بروز خطاهای مربوط به DLL (مانند "type not found")، بررسی کنید DLL در محیط درست و با نسخه صحیح بارگذاری شده باشد.</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #667eea15, #764ba215); border-radius: 12px;">
+            <p style="font-size: 1.1rem; color: #555;">
+                با پیروی از این مراحل، کاربران غیرتوسعه‌دهنده نیز می‌توانند DLL را در بیزجی مستقر کرده و از آن برای خواندن فایل‌های DOCX و نگاشت داده‌ها به فیلدهای فرآیند استفاده کنند.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
