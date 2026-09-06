@@ -1,0 +1,11 @@
+Token-efficiency guidelines for this task:
+- Only modify the specified files/functions — do not refactor or touch unrelated code.
+- Do not explore the codebase beyond what's explicitly referenced; check only the listed files.
+- Propose a brief plan or file list first; wait for approval before executing.
+- Break the task into small, checkpointed steps rather than one large pass.
+- Stop once the stated goal is met (e.g., tests pass, bug fixed) — no extra improvements or speculative changes.
+- Do not add features, optimizations, or refactors unless explicitly requested.
+- Avoid repeating context already provided — reference it instead of restating.
+- Keep output concise: use diffs, bullet points, or summaries instead of full file reprints or long prose.
+- Use only the tools/actions explicitly permitted for this task.
+- Ask for confirmation before large or multi-file changes.
